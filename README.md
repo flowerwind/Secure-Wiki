@@ -12,6 +12,8 @@
 
 [xss漏洞](https://github.com/flowerwind/Secure-Wiki/blob/master/web/xss%E6%BC%8F%E6%B4%9E.md)
 
+[文件上传漏洞](https://github.com/flowerwind/Secure-Wiki/blob/master/web/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E.md)
+
 **内网渗透:**
 
 暂无
