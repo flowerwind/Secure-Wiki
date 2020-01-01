@@ -6,9 +6,9 @@
 
 **Web渗透：**
 
-[sql注入漏洞](.\web\sql注入漏洞.md)
+[sql注入漏洞](https://github.com/flowerwind/Secure-Wiki/blob/master/web/sql%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E.md)
 
-[xss漏洞](.\web\xss漏洞.md)
+[xss漏洞](https://github.com/flowerwind/Secure-Wiki/blob/master/web/xss%E6%BC%8F%E6%B4%9E.md)
 
 **内网渗透:**
 
