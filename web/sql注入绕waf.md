@@ -8,25 +8,25 @@
 
 使用最新版安全狗进行测试，测试关卡为sqlilab得第11关
 
-![](media\2020-01-01.png)
+![](media/2020-01-01.png)
 
 可以看到我们使用报错注入直接被安全狗拦截了，接下来使用分块编码传输尝试。
 
-![](media\2020-01-02.png)
+![](media/2020-01-02.png)
 
 可以看到已经通过报错获得了当前用户的用户名。
 
 结合sqlmap使用得话可以用以下方法
 
-* 将burp得proxy设置为自动进行分块传输![](media\2020-01-04.png)
+* 将burp得proxy设置为自动进行分块传输![](media/2020-01-04.png)
 
-  ![](media\2020-01-05.png)
+  ![](media/2020-01-05.png)
 
 * ```
   sqlmap执行命令：python sqlmap.py -r test.txt --proxy=http://127.0.0.1:8080
   ```
 
-  ![](media\2020-01-06.png)
+  ![](media/2020-01-06.png)
 
 ### 安全狗特性绕WAF
 
@@ -36,7 +36,7 @@
 http://localhost/sqllab/Less-1/?a=/*&id=1%27%20and%20updatexml(1,concat(0x7e,(select%20user()),0x7e),1)--+*/
 ```
 
-![](media\2020-01-03.png)
+![](media/2020-01-03.png)
 
 ### FUZZ
 

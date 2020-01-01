@@ -44,7 +44,7 @@ JSFinder: https://xz.aliyun.com/t/5390
 <a href="javascript:alert('&#x25;&#x35;&#x63;&#x75;&#x30;&#x30;&#x36;&#x38;&#x25;&#x35;&#x63;&#x75;&#x30;&#x30;&#x36;&#x38;');">test</a>
 ```
 
-![](media\2019-12-30-01.png)
+![](media/2019-12-30-01.png)
 
 ```
 &#x25;&#x35;&#x63;&#x75;&#x30;&#x30;&#x36;&#x38;&#x25;&#x35;&#x63;&#x75;&#x30;&#x30;&#x36;&#x38;
@@ -82,11 +82,11 @@ JSFinder: https://xz.aliyun.com/t/5390
 
 将上面的代码保存为html后点击a标签
 
-![](media\2019-12-30-02.png)
+![](media/2019-12-30-02.png)
 
 我们发现页面跳转到了/javascript:alert('hh')
 
-![](media\2019-12-30-03.png)
+![](media/2019-12-30-03.png)
 
 通过审查元素发现href的内容浏览器没有被自动转码出来，因此在解析时java%73%63%72ipt:alert('hh');并不会被认为时javascript进行解析，而是作为一个url进行跳转。
 
@@ -96,7 +96,7 @@ JSFinder: https://xz.aliyun.com/t/5390
 
 而我们使用上面的代码时,浏览器解析时会先把HTML转码，转码后暴露出完整的javascript: 这是会将javascript后的内容作为js进行解析。
 
-![](media\2019-12-30-04.png)
+![](media/2019-12-30-04.png)
 
 ### 修复方案
 
@@ -112,10 +112,10 @@ JSFinder: https://xz.aliyun.com/t/5390
 
 PS:附加一个某个地方进行不合理过滤会导致得绕过
 
-![](media\2019-12-30-05.png)
+![](media/2019-12-30-05.png)
 
 text模拟的是从通过js取下来的一段攻击者可控的内容，当开发人员试图通过document.write将text输出时，开发者可能会使用常规的HTMLEncode。然而我们可以看到，HTMLEncode对于text字符来说并无效果，在页面输出时还会直接将\<img>标签拼接在HTML中。
 
-![](media\2019-12-30-06.png)
+![](media/2019-12-30-06.png)
 
 按照上面得修复方案，我们应该对这种方式使用JavascriptEncode编码。

