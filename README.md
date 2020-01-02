@@ -16,6 +16,8 @@
 
 [绕过CDN寻找真实ip](https://github.com/flowerwind/Secure-Wiki/blob/master/web/%E7%BB%95%E8%BF%87CDN%E5%AF%BB%E6%89%BE%E7%9C%9F%E5%AE%9Eip.md)
 
+[CSRF漏洞](https://github.com/flowerwind/Secure-Wiki/blob/master/web/CSRF%E6%BC%8F%E6%B4%9E.md)
+
 **内网渗透:**
 
 暂无
